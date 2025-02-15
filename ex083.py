@@ -1,15 +1,14 @@
-cont = 0
-parenteses = []
-so_parenteses = []
+pilha = []
 expressao = str(input('Digite a expressão: '))
-while True:
-    if expressao[cont] in '()':
-        parenteses.append(expressao[cont])
-    cont += 1
-    if cont == len(expressao):
-        break
-if parenteses.count('(') == parenteses.count(')') and ')' not in parenteses[:parenteses.count('(')]\
-        and '(' not in parenteses[parenteses.count(')'):]:
-    print('Equação pode ser resolvida.')
+for c in expressao:
+    if c == '(':
+        pilha.append('(')
+    if c == ')':
+        if len(pilha) > 0:
+            pilha.pop()
+        else:
+            pilha.append(')')
+if len(pilha) == 0:
+    print('Sua expressão está válida!')
 else:
-    print('Equação não pode ser resolvida.')
+    print('Sua expressão está inválida!')
