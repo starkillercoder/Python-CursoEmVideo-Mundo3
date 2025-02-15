@@ -1,11 +1,11 @@
-numeros_pares = []
-numeros_impares = []
-numeros = [numeros_pares, numeros_impares]
-for c in range(0, 7):
-    numero = int(input('Digite um número: '))
+numeros = [[], []]
+for c in range(1, 8):
+    numero = int(input(f'Digite o {c}º valor: '))
     if numero % 2 == 0:
-        numeros_pares.append(numero)
+        numeros[0].append(numero)
     else:
-        numeros_impares.append(numero)
-print(f'Números pares: {sorted(numeros[0])}'
-      f'\nNúmeros ímpares: {sorted(numeros[1])}')
+        numeros[1].append(numero)
+print('-=' * 30)
+print(f'Os números pares são {sorted(numeros[0])}.')
+print(f'Os números ímpares são: {sorted(numeros[1])}')
+print('-=' * 30)
