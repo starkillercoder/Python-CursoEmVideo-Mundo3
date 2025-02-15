@@ -11,9 +11,7 @@ while True:
         p += 1
     if p == 3:
         break
-for c in matriz:
-    if cont == 3 or cont == 6:
-        print(f'\n[ {c} ]', end='')
-    else:
-        print(f'[ {c} ]', end='')
-    cont += 1
+for c in range(0, 9):
+    print(f'[{matriz[c]:^5}]', end='')
+    if c == 2 or c == 5:
+        print()
