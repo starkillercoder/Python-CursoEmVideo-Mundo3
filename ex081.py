@@ -10,7 +10,8 @@ while True:
         break
 print('-=' * 30)
 print(f'Você digitou {len(numeros)} elementos.')
-print(f'Os valores em ordem decrescente são {numeros[::-1]}')
+numeros.sort(reverse=True)
+print(f'Os valores em ordem decrescente são {numeros}')
 if 5 in numeros:
     print(f'O valor 5 está na lista.')
 else:
